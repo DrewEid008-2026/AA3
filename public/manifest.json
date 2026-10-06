@@ -1,0 +1,15 @@
+{
+  "short_name": "Aliens, again.",
+  "name": "Aliens, again.",
+  "icons": [
+    {
+      "src": "https://media.base44.com/images/public/6abf3ad0bb5a43583580b9e3/aa00b918b_generated_image.png",
+      "sizes": "192x192 512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "display": "standalone"
+}

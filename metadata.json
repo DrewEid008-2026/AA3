@@ -1,0 +1,8 @@
+{
+  "name": "AliensAgai-3.0",
+  "description": "Imported from GitHub: DrewEid008-2026/2aliensagain",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

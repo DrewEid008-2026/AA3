@@ -1,0 +1,133 @@
+{
+  "name": "Soldier",
+  "type": "object",
+  "properties": {
+    "soldier_id": {
+      "type": "string",
+      "description": "Unique soldier key (e.g. viper, badger, patch)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name"
+    },
+    "callsign": {
+      "type": "string",
+      "description": "Callsign"
+    },
+    "class": {
+      "type": "string",
+      "enum": [
+        "assault",
+        "heavy",
+        "support",
+        "engineer",
+        "marksman"
+      ],
+      "description": "Soldier class"
+    },
+    "level": {
+      "type": "number",
+      "default": 1,
+      "description": "Current level (1-5)"
+    },
+    "xp": {
+      "type": "number",
+      "default": 0,
+      "description": "Current XP toward next level"
+    },
+    "current_hp": {
+      "type": "number",
+      "default": 8,
+      "description": "Current HP (persists between missions)"
+    },
+    "max_hp": {
+      "type": "number",
+      "default": 8,
+      "description": "Maximum HP (base + level bonuses, excludes equipment)"
+    },
+    "alive": {
+      "type": "boolean",
+      "default": true,
+      "description": "Always true \u2014 permanent player death removed. Kept for compatibility."
+    },
+    "injured": {
+      "type": "boolean",
+      "default": false,
+      "description": "True when bleed-out expired. Injured soldiers have 0 HP and cannot deploy until treated."
+    },
+    "injuries_sustained": {
+      "type": "number",
+      "default": 0,
+      "description": "Total injuries sustained across all missions"
+    },
+    "missions_participated": {
+      "type": "number",
+      "default": 0,
+      "description": "Total missions deployed"
+    },
+    "missions_survived": {
+      "type": "number",
+      "default": 0,
+      "description": "Missions completed without injury"
+    },
+    "personal_kills": {
+      "type": "number",
+      "default": 0,
+      "description": "Lifetime kill count"
+    },
+    "elite_kills": {
+      "type": "number",
+      "default": 0,
+      "description": "Lifetime elite kills"
+    },
+    "times_downed": {
+      "type": "number",
+      "default": 0,
+      "description": "Times downed across all missions"
+    },
+    "revives_performed": {
+      "type": "number",
+      "default": 0,
+      "description": "Allies revived across all missions"
+    },
+    "upgrades": {
+      "type": "object",
+      "description": "Selected skill-tree nodes keyed by level: { level2: 'momentum', level4: 'rapid_breach' }"
+    },
+    "available_skill_selections": {
+      "type": "number",
+      "default": 0,
+      "description": "Unspent skill selections available to spend in the Skill Tree."
+    },
+    "kill_progress": {
+      "type": "number",
+      "default": 0,
+      "description": "Kills toward next XP milestone (0-2, resets at 3)"
+    },
+    "equipped_weapon": {
+      "type": "string",
+      "description": "Equipped weapon item ID (e.g. rifle, shotgun, lmg, sniper_rifle, laser_rifle, plasma_lmg). Any class can equip any player weapon."
+    },
+    "equipped_armor": {
+      "type": "string",
+      "description": "Equipped armor item ID (e.g. tactical_vest, reinforced_armor)"
+    },
+    "equipped_utility": {
+      "type": "string",
+      "description": "Equipped utility item ID (e.g. ammo_rig, mobility_kit, field_medkit)"
+    },
+    "icon_color": {
+      "type": "string",
+      "description": "Icon background color key (from iconColors palette). Cosmetic only."
+    },
+    "icon": {
+      "type": "string",
+      "description": "Custom icon key override (from soldierIcons registry). Unset = use class default icon. Cosmetic only."
+    }
+  },
+  "required": [
+    "soldier_id",
+    "name",
+    "class"
+  ]
+}

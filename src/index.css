@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Noir comic palette — near-black backgrounds, white ink text.
+       The app UI is always dark; :root carries the dark noir values so
+       shadcn/ui components match the game's hardcoded dark surfaces. */
+    --background: 0 0% 3%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 3%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 62%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 62%;
+    --chart-1: 130 90% 55%;
+    --chart-2: 0 75% 50%;
+    --chart-3: 265 70% 60%;
+    --chart-4: 130 90% 40%;
+    --chart-5: 265 60% 45%;
+    --radius: 0.5rem;
+    --font-heading: ui-sans-serif, system-ui, sans-serif;
+    --font-body: ui-sans-serif, system-ui, sans-serif;
+    --font-display: ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 0% 96%;
+    --sidebar-primary-foreground: 0 0% 3%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 265 70% 60%;
+
+    /* Accent colors — the only three that carry meaning.
+       toxic green  = alien / bio hazards
+       blood red    = health / heavy firepower
+       deep purple  = tech / precision */
+    --bio: 130 90% 55%;
+    --bio-foreground: 0 0% 3%;
+    --blood: 0 75% 50%;
+    --blood-foreground: 0 0% 98%;
+    --tech: 265 70% 60%;
+    --tech-foreground: 0 0% 98%;
+  }
+
+  .dark {
+    --background: 0 0% 3%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 0 0% 96%;
+    --primary-foreground: 0 0% 3%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 62%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 96%;
+    --destructive: 0 75% 50%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 0 0% 62%;
+    --chart-1: 130 90% 55%;
+    --chart-2: 0 75% 50%;
+    --chart-3: 265 70% 60%;
+    --chart-4: 130 90% 40%;
+    --chart-5: 265 60% 45%;
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 0% 96%;
+    --sidebar-primary-foreground: 0 0% 3%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 96%;
+    --sidebar-border: 0 0% 18%;
+    --sidebar-ring: 265 70% 60%;
+
+    --bio: 130 90% 55%;
+    --bio-foreground: 0 0% 3%;
+    --blood: 0 75% 50%;
+    --blood-foreground: 0 0% 98%;
+    --tech: 265 70% 60%;
+    --tech-foreground: 0 0% 98%;
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html,
+  body {
+    overscroll-behavior: none;
+    overscroll-behavior-y: none;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+}
+
+/* --- Title screen slideshow animations --- */
+
+@keyframes titleKenBurns {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+@keyframes titleGrainFlicker {
+  0%, 100% { opacity: 0.03; }
+  33% { opacity: 0.06; }
+  66% { opacity: 0.035; }
+}
+
+@keyframes titleInkFlash {
+  0% { opacity: 0; }
+  15% { opacity: 0.5; }
+  100% { opacity: 0; }
+}

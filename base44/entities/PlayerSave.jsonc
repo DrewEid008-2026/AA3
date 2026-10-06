@@ -1,0 +1,63 @@
+{
+  "name": "PlayerSave",
+  "type": "object",
+  "properties": {
+    "credits": {
+      "type": "number",
+      "default": 0,
+      "description": "Credits currency"
+    },
+    "alien_materials": {
+      "type": "number",
+      "default": 0,
+      "description": "Recovered from defeated alien forces. Used to manufacture advanced Tier 2 and Tier 3 technology. Awarded 1 per enemy defeat during successful missions."
+    },
+    "powerCores": {
+      "type": "number",
+      "default": 0,
+      "description": "Rare alien energy component required to manufacture Tier 3 Plasma weapons and Powered Armor."
+    },
+    "nanoCubes": {
+      "type": "number",
+      "default": 0,
+      "description": "Rare alien fabrication core recovered from the Chapter 2 Boss (The Harvester). Awarded +1 per successful Boss victory. Will enable future Tier 4 Nano Technology equipment."
+    },
+    "inventory": {
+      "type": "object",
+      "description": "Equipment inventory: { item_id: quantity_owned }"
+    },
+    "squad_upgrades": {
+      "type": "object",
+      "description": "Purchased squad size upgrades: { improvement1: true, improvement2: true }"
+    },
+    "chapter": {
+      "type": "object",
+      "description": "Chapter progression state: { chapterId, chapterNumber, chapterProgressPercent, successfulMissionsThisChapter, bossUnlocked, bossDefeated }",
+      "properties": {
+        "chapterId": {
+          "type": "string"
+        },
+        "chapterNumber": {
+          "type": "number"
+        },
+        "chapterProgressPercent": {
+          "type": "number",
+          "default": 0
+        },
+        "successfulMissionsThisChapter": {
+          "type": "number",
+          "default": 0
+        },
+        "bossUnlocked": {
+          "type": "boolean",
+          "default": false
+        },
+        "bossDefeated": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    }
+  },
+  "required": []
+}
